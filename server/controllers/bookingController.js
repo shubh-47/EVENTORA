@@ -1,6 +1,6 @@
 const Booking = require('../models/Bookings.js');
 const Event = require('../models/Event.js');
-const OTP = require('../models/otp.js');
+const OTP = require('../models/OTP.js');
 const Razorpay = require('razorpay');
 
 const razorpay = new Razorpay({
