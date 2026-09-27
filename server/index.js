@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const cookieParser = require("cookie-parser");
 
-const authRoutes = require('../server/routes/auth.js')
-const eventRoutes = require('../server/routes/events.js')
-const bookingRoutes = require('../server/routes/booking.js')
-const paymentRoutes = require('../server/routes/payment.js');
+const authRoutes = require('./routes/auth.js')
+const eventRoutes = require('./routes/events.js')
+const bookingRoutes = require('./routes/booking.js')
+const paymentRoutes = require('./routes/payment.js');
 dotenv.config();
 const app = express();
 app.use(cors());
@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGODB_URI)
   console.error(`Error in connecting to  MongoDB:`, error);
 });
 
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 5000 ;
 app.listen(PORT ,()=>{
 console.log(`Server is running on port ${PORT}`)
 })
