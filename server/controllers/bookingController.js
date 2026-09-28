@@ -149,11 +149,13 @@ exports.bookEvent = async (req, res) => {
             await event.save();
 
             // Send confirmation email
-            await sendBookingEmail(
-                req.user.email,
-                req.user.name,
-                event.title
-            );
+          sendBookingEmail(
+    user.email,
+    user.name,
+    event.title
+).catch(err => {
+    console.error('Email error:', err);
+});
         }
 
 
